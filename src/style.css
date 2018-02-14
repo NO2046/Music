@@ -32,6 +32,9 @@ ul,ol,li{list-style: none;}
     padding: 10px;
     border-bottom:1px grey dashed;
 }
+.songList > li.active{
+    background: #ccc;
+}
 .uploadAreaWrapper{
     border:2px dashed grey;
     padding:10px;
@@ -47,4 +50,20 @@ ul,ol,li{list-style: none;}
     justify-content: center;
     align-items: center;
     cursor: pointer;
+}
+/*main*/
+.page main{
+    background: #ccc;
+}
+main .form input[type=text]{
+    padding: 10 25px;
+    height:30px;
+}
+main .form button{
+    padding:0 10px;
+    margin-left: 50px;
+}
+main h2,
+main .row{
+    margin:40px;
 }
