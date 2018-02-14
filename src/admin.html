@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>管理页面</title>
+</head>
+<body>
+    <audio controls src="http://p44nh0td5.bkt.clouddn.com/%E8%84%B8%E7%BA%A2%E7%9A%84%E6%80%9D%E6%98%A5%E6%9C%9F%20-%20%E1%84%8A%E1%85%A1%E1%84%8B%E1%85%AE%E1%86%AB%E1%84%82%E1%85%A1%E1%86%AF.mp3"></audio>
+    <img src="http://p44nh0td5.bkt.clouddn.com/58ed87a1e7bce7137db7a76a.jpeg" alt="">
+    <script src="../node_modules/leancloud-storage/dist/av-min.js"></script>
+    <script src="../node_modules/qiniu-js/dist/qiniu.min.js"></script>
+    <script>
+        console.log(qiniu)
+        var APP_ID = 'uS7kQ9yxNEGihbJ8BfBdUwRv-gzGzoHsz';
+        var APP_KEY = 'RWBXVCHWaVoONbyGqctRJSGv';
+
+        AV.init({
+        appId: APP_ID,
+        appKey: APP_KEY
+        });
+
+        var TestObject = AV.Object.extend('Playlist');
+        var testObject = new TestObject();
+        testObject.save({
+        name: 'test',
+        cover:'test',
+        creatorId:'test',
+        description:'test',
+        songs:['1','2']
+        }).then(function(object) {
+        alert('LeanCloud Rocks!');
+        })
+    </script>
+</body>
+</html>
