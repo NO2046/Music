@@ -1,35 +1,45 @@
-alert(1)
 {
     let view = {
-        el:'.page > main',
+        el:"#editSong",
         template:`
-        <form action="" class="form">
-        <h2>新建歌曲</h2>
-        <div class="row">
-            <label for="">
-                歌名
-                <input type="text">
-            </label>
+        <form action="">
+        <div class="input">
+            <div class="row">
+                <label for="">
+                    歌名
+                    <input type="text">
+                </label>
+            </div>
+            <div class="row">
+                <label for="">
+                    歌手
+                    <input type="text">
+                </label>
+            </div>
+            <div class="row">
+                <label for="">
+                    外链
+                    <input type="text">
+                </label>
+            </div>
         </div>
+
         <div class="row">
-            <label for="">
-                歌手
-                <input type="text">
-            </label>
+            <button type="submit">SAVE</button>
         </div>
-        <div class="row">
-            <label for="">
-                外链
-                <input type="text">
-            </label>
-        </div>
-        <div class="row">
-            <button type="submit">保存</button>
-        </div>
-        </form>
+    </form>
         `,
-        renderd(data){
-           $(this.el).html(this.template)
+        render(data){
+            $(this.el).html(this.template)
         }
     }
+    let model = {}
+    let controller = {
+        init(view,model){
+            this.view = view
+            this.model = model
+            this.view.render(this.model.data)
+        }
+    }
+    controller.init(view,model)
 }
