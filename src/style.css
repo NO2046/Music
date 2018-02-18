@@ -22,6 +22,9 @@ padding: 20px;margin-top:20px;justify-content: space-around;}
 .editSong > form input[type="text"]:focus{
     border-color: #cccc;
 }
+.newSong.active{
+    background-color:#ff0000;    
+}
 .newSong,
 .editSong > form button{
     border:none;
@@ -56,6 +59,9 @@ padding: 20px;margin-top:20px;justify-content: space-around;}
     background-color:rgba(0, 0, 0, 0.2);
     padding-left:10px;line-height: 40px;
     border-radius:3px;
+}
+.songList ol li.active{
+    background-color:rgba(0, 0, 0, 0.5);   
 }
 .newSong{
     margin-top:20px;   
