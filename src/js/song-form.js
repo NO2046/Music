@@ -92,12 +92,8 @@
                 this.view.render(this.model.data)
             })
         },
-        bindEvents(){
-            //因为form是render到页面里，故一开始找不到
-            //要绑定在 $el 上
-            this.view.$el.on('submit','form',(e)=>{
-                e.preventDefault()
-                let needs = "name singer url".split(" ")
+        create(){
+            let needs = "name singer url".split(" ")
                 let data  = {}
                 needs.map((string)=>{
                     data[string]=
@@ -111,6 +107,32 @@
                         let object = JSON.parse(string)
                         window.eventHub.emit('create',object)
                     })
+        },
+        update(){
+            let needs = "name singer url".split(" ")
+                let data  = {}
+                needs.map((string)=>{
+                    data[string]=
+                    this.view.$el.find(`[name = "${string}"]`).val()
+                })
+            var song = AV.Object.createWithoutData('Song', this.model.data.id);
+            song.set('name', data.name)
+            song.set('singer', data.singer)
+            song.set('url', data.url)
+            song.save();
+        },
+        bindEvents(){
+            //因为form是render到页面里，故一开始找不到
+            //要绑定在 $el 上
+            this.view.$el.on('submit','form',(e)=>{
+                e.preventDefault()
+
+                if(this.model.data.id){
+                    this.update()
+                }else{
+                    this.create()
+                }
+                return     
             })
         }
     }
