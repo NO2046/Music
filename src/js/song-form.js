@@ -87,6 +87,10 @@
                 this.view.render(data)
                 let needs =""
             })
+            window.eventHub.on('select',(data)=>{
+                this.model.data = data
+                this.view.render(this.model.data)
+            })
         },
         bindEvents(){
             //因为form是render到页面里，故一开始找不到
