@@ -22,6 +22,10 @@ padding: 20px;margin-top:20px;justify-content: space-around;}
 .editSong > form input[type="text"]:focus{
     border-color: #cccc;
 }
+.editSong h3{
+    margin-top:15px;
+    margin-left:22px;
+}
 .newSong.active{
     background-color:#ff0000;    
 }
@@ -50,9 +54,12 @@ padding: 20px;margin-top:20px;justify-content: space-around;}
 }
 .songList{
     margin-top: 20px;
-    height:200px;
+    height:230px;
     cursor: pointer;
+    overflow-x:hidden;
+    overflow-y:auto;
 }
+
 .songList ol li{
     width:700px;
     height:40px;
@@ -65,5 +72,6 @@ padding: 20px;margin-top:20px;justify-content: space-around;}
     background-color:rgba(0, 0, 0, 0.5);   
 }
 .newSong{
-    margin-top:20px;   
+    margin-top:20px; 
+     line-height: 25px;
 }

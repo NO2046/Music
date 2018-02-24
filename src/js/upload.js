@@ -34,6 +34,7 @@
                         // 每个文件上传前，处理相关的事情
                     },
                     'UploadProgress': function (up, file) {
+                        window.eventHub.emit('new')
                         // 每个文件上传时，处理相关的事情
                         //uploadStatus.textContent = "上传中"
                     },
