@@ -2,7 +2,7 @@
 *{box-sizing:border-box;}
 ol,ul,li{list-style: none;}
 a{text-decoration: none;}
-html{font-size: 18px;font-family: Helvetica;}
+html{font-size: 18px;font-family: Helvetica;overflow-x:auto;}
 body{background-size: cover;background:grey url(../img/background.jpg) no-repeat center center;height:100vh;display: flex;flex-direction: column;color:#9a9da3;justify-content: center;
 align-items: center;}
 .upLoad-wrapper{border:2px #454545 dashed;width:700px;height:150px;margin-top:-100px;
