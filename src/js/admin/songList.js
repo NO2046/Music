@@ -28,7 +28,6 @@
   let model = {
     data: {
       songs: [],
-      selectedSongId:undefined
     },
     find() {
       var query = new AV.Query('Song')
@@ -81,6 +80,7 @@
       window.eventHub.on('create', (songData) => {
         this.model.data.songs.push(songData)
         this.view.render(this.model.data)
+        this.view.clearActive()
       })
       window.eventHub.on('update', (song) => {
         let songs = this.model.data.songs

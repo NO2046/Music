@@ -34,7 +34,7 @@
         `,
         //如果data没有传或者传的data为undefined，默认data为空对象
         render(data = {}) {
-            let placeHolders = ['name', 'singer', 'url']
+            let placeHolders = ['name', 'singer', 'url', 'id']
             let html = this.template
             placeHolders.map((string) => {
                 html = html.replace(`&&${string}`, data[string] || '')
