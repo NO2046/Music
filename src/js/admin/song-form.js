@@ -25,6 +25,12 @@
                     <input name="url" type="text" value="&&url">
                 </label>
             </div>
+            <div class="row">
+                <label for="">
+                    封面
+                    <input name="cover" type="text" value="&&cover">
+                </label>
+            </div>
         </div>
 
         <div class="row">
@@ -34,7 +40,7 @@
         `,
         //如果data没有传或者传的data为undefined，默认data为空对象
         render(data = {}) {
-            let placeHolders = ['name', 'singer', 'url', 'id']
+            let placeHolders = ['name', 'singer', 'url', 'id','cover']
             let html = this.template
             placeHolders.map((string) => {
                 html = html.replace(`&&${string}`, data[string] || '')
@@ -55,13 +61,14 @@
 
     let model = {
         data: {
-            name: "", singer: "", url: "", id: ""
+            name: "", singer: "", url: "", id: "",cover:""
         },
         update(data) {
             var song = AV.Object.createWithoutData('Song', this.data.id);
             song.set('name', data.name)
             song.set('singer', data.singer)
             song.set('url', data.url)
+            song.set('cover', data.cover)
             return song.save().then((response) => {
                 Object.assign(this.data, data)
                 return response
@@ -73,6 +80,7 @@
             song.set('name', data.name);
             song.set('singer', data.singer);
             song.set('url', data.url);
+            song.set('cover', data.cover)
             return song.save().then((newSong) => {
                 let { id, attributes } = newSong
                 /*this.data.id=id
@@ -106,7 +114,7 @@
             })
             window.eventHub.on('new', (data) => {
                 if (this.model.data.id) {
-                    this.model.data = { name: "", url: '', id: '', singer: '' }
+                    this.model.data = { name: "", url: '', id: '', singer: '' ,cover:''}
                 } else {
                     Object.assign(this.model.data, data)
                 }
@@ -114,7 +122,7 @@
             })
         },
         create() {
-            let needs = "name singer url".split(" ")
+            let needs = "name singer url cover".split(" ")
             let data = {}
             needs.map((string) => {
                 data[string] =
@@ -130,7 +138,7 @@
                 })
         },
         update() {
-            let needs = "name singer url".split(" ")
+            let needs = "name singer url cover".split(" ")
             let data = {}
             needs.map((string) => {
                 data[string] =

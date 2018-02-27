@@ -1,13 +1,9 @@
 {
   let view={
     el:'#app',
-    template:`
-    <audio src={{url}}>钢琴曲</audio>
-    <div class='play'>播放</div>
-    <div class='pause'>暂停</div>
-    `,
     render(data){
-      $(this.el).html(this.template.replace('{{url}}',data.url))
+      let {song} = data
+      $(this.el).css('background-image',`url(${song.cover})`)
     },
     play(){
       let audio = $(this.el).find('audio')[0]
@@ -20,15 +16,18 @@
   }
   let model={
     data:{
-      id:'',
-      name:'',
-      singer:'',
-      url:''
+      song:{
+        id:'',
+        name:'',
+        singer:'',
+        url:''
+      },
+      status:'pause' 
     },
     get(id){
       var query = new AV.Query('Song')
       return query.get(id).then((song)=>{
-        Object.assign(this.data,{id:song.id,...song.attributes})
+        Object.assign(this.data.song,{id:song.id,...song.attributes})
         return song
       })
     }
@@ -40,16 +39,12 @@
       let id = this.getSongId()
       this.model.get(id).then(()=>{
         this.view.render(this.model.data)
+
       })
       this.bindEvents()
     },
     bindEvents(){
-      $(this.view.el).on('click','.play',()=>{
-        this.view.play()
-      })
-      $(this.view.el).on('click','.pause',()=>{
-        this.view.pause()
-      })
+      
     },
     getSongId(){
       let search = window.location.search
