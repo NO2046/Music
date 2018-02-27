@@ -4,19 +4,14 @@
     init(){
       this.$el = $(this.el)
     },
-    render(data){
-      let {songs} = data
-      console.log(3)
-
-      songs.map((song)=>{
-        let $li=$(`
-        <li>
-        <h3>${song.name}</h3>
+    template:`
+      <li>
+        <h3>{{song.name}}</h3>
         <p>
           <svg class="icon icon-sq">
             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-sq"></use>
           </svg>
-          ${song.singer}
+          {{song.singer}}
         </p>
         <a class="playButton" href="#">
           <svg class="icon icon-play">
@@ -24,10 +19,13 @@
           </svg>
         </a>
       </li>
-        `)
+    `,
+    render(data){
+      let {songs} = data
+      songs.map((song)=>{
+        let $li=$(this.template.replace('{{song.name}}',song.name)
+          .replace('{{song.singer}}',song.singer))
         this.$el.find('ol.list').append($li)
-        console.log(4)
-
       })
     }
   }
@@ -53,11 +51,9 @@
       this.model = model
       this.view.init()
       this.model.find().then(()=>{
-        console.log(2)
         this.view.render(this.model.data)
       })
     }
   }
-  console.log(1)
   controller.init(view,model)
 }
