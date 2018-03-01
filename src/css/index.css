@@ -149,7 +149,7 @@ section.playlists > ol.songs > li .playNumber{
   position: absolute;
   right: 5px;
   top: 2px;
-  z-index: 3;
+  z-index: 0;
   padding-left: 13px;
   color: #fff;
   font-size: 12px;
@@ -194,3 +194,76 @@ section.songs > .list .icon-play{
 section.songs > .list .icon-sq{
   fill: #FE672E;
 }
+section.links{
+    position: relative;
+    padding-top: 56%;
+    margin-top: 4px;
+    background: url(//s3.music.126.net/m/s/img/recommand_bg_2x.png?d045faf…) no-repeat;
+    background-size: contain;
+}
+section.links .linksWrapper{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  z-index: 1;
+  text-align: center;
+}
+section.links .logosvg{
+  width: 230px;
+  height: 44px;
+  margin :0 auto;
+  display: block;
+  margin-top: 65px;
+}
+section.links  a{
+  display: inline-block;
+  width:300px;
+  height:40px;
+  border:1px #d33a31 solid;
+  border-radius:38px;
+  text-align: center;
+  line-height: 38px;
+  color:#d33a31;
+  margin: 15px 37px 5px;
+  font-size: 16px;
+} 
+.copyright {
+  color: #888;
+  font-size: 12px;
+  line-height: 16px;
+  -webkit-transform: scale(.75);
+  transform: scale(.75);
+}
+
+/*page2*/
+.hotTop{
+  border:1px red solid;
+  background: no-repeat url(http://s3.music.126.net/m/s/img/hot_music_bg_2x.jpg?f01a252389c26bcf016816242eaa6aee);
+  position: relative;
+  padding-top: 38.9%;
+  overflow: hidden;
+  background-size: contain;
+}
+.hotTop .logoWrapper{
+  border:1px green solid;
+  display:flex;
+  flex-direction: column;
+  padding-left:20px;
+  position:relative;
+  top:0;left:0;
+}
+/* .hotTop .logo{
+  background: no-repeat url(http://s3.music.126.net/m/s/img/index_icon_2x.png?5207a28c3767992ca4bb6d4887c74880);
+  background-size: 166px 97px;
+  border:1px blue solid;
+  width: 142px;
+  height: 67px;
+  background-position: -24px -30px;
+  overflow: hidden;
+  margin:0;
+  padding:0;
+} */
+
+

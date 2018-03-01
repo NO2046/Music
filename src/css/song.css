@@ -7,7 +7,16 @@
 	background:center no-repeat transparent url(http://p3.music.126.net/nHdFeciX7IpApz4hk0kyAA==/109951163094567793.jpg://p4.music.126.net/jhzB-bjWaoDV66GYAOBNwQ==/109951163076165558.jpg)
 
 }
-
+span.logo{
+		position: absolute;
+    top: 12px;
+    left: 10px;
+    display: block;
+    width: 100px;
+    height: 17px;
+    background: url(//s3.music.126.net/m/s/img/logo.png?0c21b75…) no-repeat;
+    background-size: 100px auto;
+}
 .disc-container{position: relative; }
 .disc-container .icon-wrapper{position: absolute; z-index: 1; display: flex; 
 	justify-content: center; align-items: center;
@@ -75,6 +84,8 @@
 	justify-content: center;
 	align-items: center;
 	color: #D43B32;
+	background: url(./img/page1BottomBg.png);
+	border:1px red solid;
 }
 .page > .links > a{
 	width: 38.5vw;
@@ -85,7 +96,7 @@
 	padding: 1.5vw;
 	color: inherit;
 	text-decoration: none;
-	border-radius: 1.3vw;
+	border-radius: 40px;
 	letter-spacing: 1vw;
 }
 .page > .links > a.main{
