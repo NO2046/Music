@@ -8,40 +8,31 @@
         <form>
         <div class="input">
             <div class="row">
-                <label for="">
-                    歌名
-                    <input name="name" type="text" value="&&name">
-                </label>
+                <label for="">歌名</label>
+                <input name="name" type="text" value="&&name">                
             </div>
             <div class="row">
-                <label for="">
-                    歌手
-                    <input name="singer" type="text" value="&&singer">
-                </label>
+                <label for="">歌手</label>
+                <input name="singer" type="text" value="&&singer">
             </div>
             <div class="row">
-                <label for="">
-                    外链
-                    <input name="url" type="text" value="&&url">
-                </label>
+                <label for="">外链</label>
+                <input name="url" type="text" value="&&url">
             </div>
             <div class="row">
-                <label for="">
-                    封面
-                    <input name="cover" type="text" value="&&cover">
-                </label>
+                <label for="">封面</label>
+                <input name="cover" type="text" value="&&cover">
             </div>
-            <div class="row">
-                <label for="">
-                    歌词
-                    <textarea cols=30 rows = 5 name='lyrics'>&&lyrics</textarea>
-                </label>
+            <div class="row textAreaWrapper">
+                <label for="lyrics" class='lyrics'>歌词</label>
+                <textarea rows = 6 cols=47 name='lyrics'>&&lyrics</textarea>
             </div>
         </div>
 
         <div class="row">
             <button type="submit">SAVE</button>
         </div>
+
     </form>
         `,
         //如果data没有传或者传的data为undefined，默认data为空对象
