@@ -25,7 +25,7 @@
             </div>
             <div class="row textAreaWrapper">
                 <label for="lyrics" class='lyrics'>歌词</label>
-                <textarea rows = 6 cols=47 name='lyrics'>&&lyrics</textarea>
+                <textarea rows = 6 cols=34 name='lyrics'>&&lyrics</textarea>
             </div>
         </div>
 
