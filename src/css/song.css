@@ -18,14 +18,21 @@ span.logo{
     background-size: 100px auto;
 }
 .disc-container{position: relative; }
-.disc-container .icon-wrapper{position: absolute; z-index: 1; display: flex; 
+.disc-container .icon-wrapper{position: absolute; z-index: 2; display: flex; 
 	justify-content: center; align-items: center;
-	 height: 20vw; width: 20vw;
+	height: 20vw; width: 20vw;
 	border-radius: 50%; 
 }
-.disc-container .icon {width: 15vw; fill: white; 
+.cover-wrapper{
+	border-radius: 50%;
+	display: flex; justify-content: center; align-items: center; 
+	width: 47vw ;height:47vw;
+	border:2px solid black;
+	position: absolute; 
+}
+
+.disc-container .icon {width: 15vw; 
 	vertical-align: -0.15em;
-	fill: currentColor;
 	overflow: hidden;
 }
 .disc-container .pointer{width: 24vw; position: absolute; left: 45vw; }
@@ -35,18 +42,15 @@ span.logo{
 	width: 74vw; position: absolute;   
 	animation: circle 20s infinite linear; 
 	animation-play-state: paused;}
-.disc-container .cover{height: 100%;width:100%;border-radius: 50%;  
+
+.disc-container .cover{
+	border-radius: 50%;
+	width:100%;  
   animation: circle 20s infinite linear; 
 	animation-play-state: paused;
 	z-index:0;
 }
-.cover-wrapper{
-	border:2px solid black;
-	position: absolute; 
-	border-radius: 50%;
-	width: 47vw ;height:47vw;
-	display: flex; justify-content: center; align-items: center; 
-}
+
 .disc-container.playing .light,
 .disc-container.playing .cover{
   animation-play-state: running;
