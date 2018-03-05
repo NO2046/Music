@@ -85,7 +85,7 @@ span.logo{
 	align-items: center;
 	color: #D43B32;
 	background: url(./img/page1BottomBg.png);
-	border:1px red solid;
+	/* border:1px red solid; */
 }
 .page > .links > a{
 	width: 38.5vw;

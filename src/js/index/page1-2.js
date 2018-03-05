@@ -40,7 +40,7 @@
       return query.find().then((songs) => {
         //把 find 返回的 promise return 出去
         this.data.songs = songs.map((song) => {
-          return { id: song.id, ...song.attributes }
+          return Object.assign({id: song.id}, song.attributes )
         })
         return songs
         //promise 的 要 return

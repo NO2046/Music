@@ -168,7 +168,7 @@ margin-top:0px;/*justify-content: space-around;*/}
     }
   }
 ::-webkit-scrollbar {
-    width: 1px;
+    display:none;
 } 
 input, textarea {
     background-color : #ffffff;

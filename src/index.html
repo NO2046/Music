@@ -2,7 +2,8 @@
 <html lang="zh-Hans">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="./css/index.css">
   <title>网易云音乐客户端首页</title>
@@ -116,15 +117,35 @@
           </li>
         </ol>
       </div>
+      <!-- <div id="consoleOutPut" style="width:100%;height:100px;position:fixed;bottom:0;left:0;background:yellow;overflow:auto;"> -->
 
-    <script src="../node_modules/leancloud-storage/dist/av-min.js"></script>
-    <script src="./js/init/av.js"></script>
-    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+      </div>    
+      <!-- <script>
+        window.console= {
+          log(x){
+            let p = document.createElement('p')
+            p.innerText = x
+            consoleOutPut.appendChild(p)
+          }
+        }
+        window.onerror = function(message, source, lineno, colno, error) { 
+          console.log( 'Message: ' + message)
+          console.log('URL: ' + source)
+          console.log('Line: ' + lineno)
+          console.log('Column: ' + colno)
+          console.log('Error object: ' + JSON.stringify(error))
+         }             
+      </script> -->
+    <script src="../av-min.js"></script>
+    <script  src="./js/init/av.js"></script>
+    <!-- <script src="../node_modules/jquery/dist/jquery.min.js"></script> -->
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
     <script src="//at.alicdn.com/t/font_395875_4hwrep7mypx8ncdi.js"></script>
     <script src="./js/admin/event-hub.js"></script>
     <script src="./js/index/tabs.js"></script>
     <script src="./js/index/page1.js"></script>
     <script src="./js/index/page2.js"></script>
     <script src="./js/index/page3.js"></script>
+    
 </body>
 </html>
