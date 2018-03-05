@@ -74,14 +74,23 @@
         id:'',
         name:'',
         singer:'',
-        url:''
+        url:'',
+        lyrics:'',
+        cover:''
       },
       status:'paused' 
     },
     get(id){
       var query = new AV.Query('Song')
       return query.get(id).then((song)=>{
-        Object.assign(this.data.song,{id:song.id,...song.attributes})
+        Object.assign(this.data.song,{          
+          id:song.id,       
+          cover:song.attributes.cover,
+          name:song.attributes.name,
+          singer:song.attributes.singer,
+          url:song.attributes.url,
+          lyrics:song.attributes.lyrics
+        })
         return song
       })
     }
