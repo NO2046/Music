@@ -23,7 +23,11 @@ span.logo{
 	 height: 20vw; width: 20vw;
 	border-radius: 50%; 
 }
-.disc-container .icon {width: 15vw; fill: white; border:none;}
+.disc-container .icon {width: 15vw; fill: white; 
+	vertical-align: -0.15em;
+	fill: currentColor;
+	overflow: hidden;
+}
 .disc-container .pointer{width: 24vw; position: absolute; left: 45vw; }
 .disc-container .disc{display: flex; justify-content: center; align-items: center; margin-top: 18vw; }
 .disc-container .ring{width: 74vw; } 
