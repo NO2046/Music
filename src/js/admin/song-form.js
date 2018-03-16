@@ -161,7 +161,8 @@
                     this.create()
                 }
             })
-        }
+        },
+        
     }
     controller.init(view, model)
 }
