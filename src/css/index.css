@@ -4,6 +4,9 @@
 *::before{box-sizing: border-box;}
 
 a{color: inherit; text-decoration: none;}
+a:hover, a:visited, a:link, a:active {
+  color:inherit;
+}
 ul,ol{list-style: none;}
 h1,h2,h3,h4,h5,h6{ font-weight: normal; }
 
@@ -95,7 +98,7 @@ section.topbar > a::after{
   position: absolute;
   height: 2px;
   background: #D43C33;
-  bottom: 1px;
+  bottom: 0px;
   left: 0;
   width: 100%;
 }
@@ -239,7 +242,6 @@ section.links  a{
 
 /*page2*/
 .hotTop{
-  border:1px red solid;
   background: no-repeat url(http://s3.music.126.net/m/s/img/hot_music_bg_2x.jpg?f01a252389c26bcf016816242eaa6aee);
   position: relative;
   padding-top: 38.9%;
@@ -250,7 +252,6 @@ section.links  a{
   background:rgba(0,0,0,.15);
   width:100%;
   height:100%;
-  border:1px green solid;
   display:flex;
   flex-direction: column;
   padding-left:20px;
@@ -260,14 +261,22 @@ section.links  a{
 .hotTop .logo{
   background: no-repeat url(http://s3.music.126.net/m/s/img/index_icon_2x.png?5207a28c3767992ca4bb6d4887c74880);
   background-size: 166px 97px;
-  border:1px blue solid;
+  /* border:1px blue solid; */
   width: 142px;
   height: 67px;
   background-position: -24px -30px;
   overflow: hidden;
   margin:0;
   padding:0;
+  position:absolute;
+  top:25px;left:25px;
 } 
+.hotTop .date{
+  position:absolute;
+  top:103px;left:25px;
+  color:white;
+  font-size: 12px;
+}
 
 /*page3*/
 .page-3{
