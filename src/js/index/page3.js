@@ -23,6 +23,7 @@
     bindEvents(){
       $('input#search').on('input',(e)=>{
         $('.page-3 .holder').html('')
+
         let timer;
         if(timer){
           window.clearInterval(timer)
@@ -32,7 +33,14 @@
 
           let $input = $(e.currentTarget)
           let value = $input.val().trim()
-          if(value === ''){return}
+          let value2 = $input.val()
+          if(value === ''){
+            $('#searchResult').empty()
+            if(value2 ===''){
+              $('.page-3 .holder').html('搜索歌曲、歌手')
+            }
+            return
+          }
           var query1 = new AV.Query('Song')
           query1.contains('name',value)
           var query2 = new AV.Query('Song')
@@ -41,7 +49,13 @@
           query.find().then((results)=>{
             $('#searchResult').empty()
             if(results.length === 0){
-              $('#searchResult').html('暂无搜索结果')
+              $('.page-3 .holder').html('')
+
+              let $li = $(`
+                <li>
+                暂无搜索结果
+                </li>`)
+                $('#searchResult').append($li)
             }else{
               for(let i=0; i<results.length; i++){
                 let song = results[i].attributes
@@ -56,7 +70,7 @@
               }
             }         
           })
-        },500)
+        },300)
       })
     },
     bindEventHub(){
